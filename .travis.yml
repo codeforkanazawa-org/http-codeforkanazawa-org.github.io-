@@ -17,4 +17,4 @@ after_success:
   - cd build
   - git add -A
   - git commit -m 'updated'
-  - git push --quiet https://$GH_TOKEN@github.com/50river/5374site.git gh-pages
+  - git push -f --quiet https://$GH_TOKEN@github.com/50river/5374site.git gh-pages
