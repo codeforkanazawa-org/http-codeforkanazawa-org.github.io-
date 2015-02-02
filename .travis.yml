@@ -16,5 +16,5 @@ language: ruby
   after_success:
     - cd build
     - git add -A
-    - git commit -m 'やったた'
+    - git commit -m 'updated'
     - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && git push --quiet https://$GH_TOKEN@github.com/5374site.git gh-pages 2> /dev/null'
