@@ -8,4 +8,4 @@ language: ruby
       - GIT_AUTHOR_EMAIL='mr.50river@gmail.com'
       - secure: "UGz+bCf2c2Ibd8AAMu0JtnQYuQClPTCr9qr1p1ZNNaJADp+39vP8gkSZay8aecrFP6Y/NQwQ/hhZbzgtnD8Wvjf67r1UA8tOOVOdKpWD+8hPBBVyVf7XkhiHr6viNQ1cPI7SqKE4udb30mC0P2DSSSRm0DEEvxsWgDtSeuLkwTM="
   after_success:
-    - '[ "$TRAVIS_BRANCH" == "develop" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
+    - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
