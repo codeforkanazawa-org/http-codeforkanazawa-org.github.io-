@@ -1,5 +1,5 @@
 language: ruby
-  script: 'bundle install && bundle exec middleman build'
+  script: bundle exec middleman build
   env:
     global:
       - GIT_COMMITTER_NAME='50river@travis-ci'
@@ -7,5 +7,14 @@ language: ruby
       - GIT_AUTHOR_NAME='50river@travis-ci'
       - GIT_AUTHOR_EMAIL='mr.50river@gmail.com'
       - secure: "UGz+bCf2c2Ibd8AAMu0JtnQYuQClPTCr9qr1p1ZNNaJADp+39vP8gkSZay8aecrFP6Y/NQwQ/hhZbzgtnD8Wvjf67r1UA8tOOVOdKpWD+8hPBBVyVf7XkhiHr6viNQ1cPI7SqKE4udb30mC0P2DSSSRm0DEEvxsWgDtSeuLkwTM="
+  before_script:
+    - git clone --quiet https://github.com/50river/5374site.git build
+    - pushd build
+    - git checkout -b gh-pages
+    - popd
+
   after_success:
-    - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
+    - cd build
+    - git add -A
+    - git commit -m 'やったた'
+    - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && git push --quiet https://$GH_TOKEN@github.com/5374site.git gh-pages 2> /dev/null'
