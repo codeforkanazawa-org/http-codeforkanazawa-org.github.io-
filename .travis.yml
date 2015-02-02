@@ -1,5 +1,5 @@
 language: ruby
-  script: bundle exec middleman build
+  script: 'bundle install && bundle exec middleman build'
   env:
     global:
       - GIT_COMMITTER_NAME='50river@travis-ci'

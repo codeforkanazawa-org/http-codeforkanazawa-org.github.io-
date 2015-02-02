@@ -1,6 +1,7 @@
 # If you do not have OpenSSL installed, update
 # the following line to use "http://" instead
 source 'https://rubygems.org'
+gem 'middleman-deploy'
 gem 'jquery-middleman', :require => false
 gem 'bootstrap-sass', :require => false
 gem "middleman", "~>3.3.7"
