@@ -6,7 +6,7 @@ env:
     - GIT_COMMITTER_EMAIL='mr.50river@gmail.com'
     - GIT_AUTHOR_NAME='50river@travis-ci'
     - GIT_AUTHOR_EMAIL='mr.50river@gmail.com'
-    - secure: "UGz+bCf2c2Ibd8AAMu0JtnQYuQClPTCr9qr1p1ZNNaJADp+39vP8gkSZay8aecrFP6Y/NQwQ/hhZbzgtnD8Wvjf67r1UA8tOOVOdKpWD+8hPBBVyVf7XkhiHr6viNQ1cPI7SqKE4udb30mC0P2DSSSRm0DEEvxsWgDtSeuLkwTM="
+    - secure: "D/mT2Q4R8UxrQEPi5roc4KoyzR9UbznZQDlPHqur/UlRsG2N4AUjwzTmyuHoaG30/BjEfXiDbQx1/HQvazmGut8e5ZYXrlYJ5okzwVIvNXqJgM/5p08m02t67Mve30UKDKZE1JXJxlLzBDHIDDAlaqQnn4HGqG/lAplc3ifHs90="
 before_script:
   - git clone --quiet https://github.com/50river/5374site.git build
   - pushd build
