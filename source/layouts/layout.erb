@@ -8,11 +8,44 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>5374 Official Website</title>
     
-    <%= stylesheet_link_tag "styles","normalize", "all"%>
-    <%= javascript_include_tag  "all"%>
+    <%= stylesheet_link_tag "styles","normalize", "all" %>
+    <%= javascript_include_tag  "all" %>
   </head>
   <body>
-    <%= yield %>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h1 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          5374.jp
+        </a>
+      </h1>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= partial "about" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h2 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        更新情報
+        </a>
+      </h2>
+      <p>5374.jpに関する情報です</p>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <%= partial "new" %>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="spread">
+      <%= partial "spread" %>
+  </div>
     <%= partial "footer" %>
   </body>
 </html>
