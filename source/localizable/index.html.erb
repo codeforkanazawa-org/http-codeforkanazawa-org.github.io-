@@ -1,0 +1,48 @@
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h1 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          5374.jp
+        </a>
+      </h1>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= partial "about" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h2 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        更新情報
+        </a>
+      </h2>
+      <p>5374.jpに関する情報です</p>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <%= partial "new" %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h2 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        各地への広がり
+        </a>
+      </h2>
+      <p>2013年9月にCode for Kanazawaの手で誕生した5374.jpは、まず金沢市から始まりました。現在、石川県野々市市への展開など、各地へ広がりをみせています。ぜひ、あなたの町でも5374.jpを展開してみませんか？
+      サブドメインが必要な際、ご連絡頂けましたらこちらで設定いたします！</p>
+      </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      <%= partial "spread" %>
+      </div>
+    </div>
+  </div>
+  </div>
+    <%= partial "footer" %>
