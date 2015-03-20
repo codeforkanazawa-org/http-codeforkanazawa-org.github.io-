@@ -47,7 +47,7 @@ end
 #     "Helping"
 #   end
 # end
-activate :i18n
+activate :i18n, :langs => [:ja, :en]
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
