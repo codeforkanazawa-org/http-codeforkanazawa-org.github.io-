@@ -1,5 +1,11 @@
 "use strict";
+//全地区データです。
 var area_list=Array()
+//選択されているAreaのオブジェクトです。
+//0-地区名,1-地区名（ひらがな）,2-都道府県,3-更新日時,4-URL,5-緯度,6-経度
+//が各インデックスに対応しております。
+var selectedArea;
+
 
 /**
   csvを配列にします。
@@ -48,32 +54,15 @@ function putMarker(map,current){
 }
 
 
-function initialize() {
-  setTimeout(function(){
-    var mapOptions = {
-      zoom: 8,
-      center: new google.maps.LatLng(36.561325,136.656205),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
 
-    csvToArray("5374_cities.csv",function(data){
-      var label = data.shift();
-      for (var i in data){
-        putMarker(map,data[i])
-      }
-
-    })
-  },1000)
-
-}
-
+//都道府県が変更された時に呼ばれます。
 function prefectureChange(){
-  //http://qiita.com/tomcky/items/8f1868f1fb963732de39
-  var selectedPref=$(this).find("option:selected").text()
 
-  var selectedArea= area_list[selectedPref]
+  //http://qiita.com/tomcky/items/8f1868f1fb963732de39
+  var selectedPref=$("#prefecture_area").find("option:selected").text()
+
+  selectedArea= area_list[selectedPref]
 
   var city_area_option_html=""
 
@@ -87,6 +76,18 @@ function prefectureChange(){
   $("#city_area").html(city_area_option_html)
 
 }
+//選択した都道府県と市町村で対象のページにジャンプします。
+function goPage(){
+  var selectedCity=$("#city_area").find("option:selected").text()
+
+  for (var i in selectedArea){
+    if (selectedArea[i][0]==selectedCity){
+      location.href=selectedArea[i][4]
+      break
+    }
+  }
+}
+
 
 function loadScript() {
   var script = document.createElement("script");
@@ -94,9 +95,36 @@ function loadScript() {
   script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBNJWgPCGFRNCcs7ZMf10ydCgwnDisGVUU&sensor=TRUE&callback=initialize";
   document.body.appendChild(script);
 
-  $("#prefecture_area").change(prefectureChange)
 }
 
+//Google Mapの初期化が終わった後に呼ばれます。
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(36.561325,136.656205),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
+
+  csvToArray("5374_cities.csv",function(data){
+    //ラベル部分は落とす
+    var label = data.shift();
+    //地図にマーカーをたてる
+    for (var i in data){
+      putMarker(map,data[i])
+    }
+
+    //初めに変更されたとして呼ぶ
+    prefectureChange();
+
+    $("#prefecture_area").change(prefectureChange)
+
+    $("#go_page").click(goPage)
+
+
+  })
+
+}
 
 window.onload = loadScript;
