@@ -1,5 +1,5 @@
 
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h1 class="panel-title">
@@ -18,7 +18,7 @@
     <div class="panel-heading" role="tab" id="headingTwo">
       <h2 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <%= t(:new_h2) %>
+          <%= t(:new_h2) %>
         </a>
       </h2>
       <p><%= t(:new_p1) %></p>
@@ -29,31 +29,16 @@
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h2 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        <%= t(:spread_h2) %>
-        </a>
-      </h2>
-      <p><%= t(:spread_p1) %></p>
-      </div>
-
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-
-      <div class="panel-body">
-      <div id="map_canvas" style="width:100%; height:300pt"></div>
-
-      </div>
-    </div>
+  <div class="spread">
+    <%= partial "spread" %>
   </div>
+</div>
+<a href="https://github.com/codeforkanazawa-org/5374" target="_blank" title="github">
+  <div class="use">
+    <h2><%= t(:use_h2) %></h2>
+    <p><%= t(:use_p1) %></p>
   </div>
-  <a href="https://github.com/codeforkanazawa-org/5374" target="_blank" title="github">
-    <div class="use">
-      <h2><%= t(:use_h2) %></h2>
-      <p><%= t(:use_p1) %></p>
-    </div>
-  </a>
-  <footer>
-    <%= partial "footer" %>
-  </footer>
+</a>
+<footer>
+  <%= partial "footer" %>
+</footer>
