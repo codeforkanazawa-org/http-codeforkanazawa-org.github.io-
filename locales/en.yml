@@ -12,6 +12,8 @@ en:
   new_p1: "Information about 5374.jp"
   spread_h2: "“Spreading to other cities/towns”"
   spread_p1: "5374.jp was first started in Kanazawa by Code for Kanazawa in September 2013, and has since expanded into Ishikawa Prefecture (Nonoichi City) and is spreading to other places.  Why not expand 5374 to your town? If a subdomain is required, let us know and we can set it up for you."
+  use_h2: "“We want to spread 5374 to your town”"
+  use_p1: "Because 5374’s source code is open, it is possible to make this app usable for your town. Click here for more."
   footer_h2: "“About Code for Kanazawa”"
   footer_p1: "With code, the world is happy."
   footer_p2: "There are various challenges in each region, but also there are many communities (organizations) to solve these problems."
@@ -19,3 +21,4 @@ en:
   footer_p4: "Code for Kanazawa will develop hardware and software to address the challenges of citizens, in order to organize and analyze the problem to that is can actually be solved by members of the community."
   footer_p5: "Our mission is to help complete services that you would like to have designed, and to write software codes to solve your problem. We also have the power to continue to provide this service in the future."
   footer_p6: "Code for Kanazawa is an organization made for citizens. We try to use the point of view of Kanazawa citizens, without the bias of the private sector and government organizations."
+  address: "12-6 Showa-machi, Kanazawa-shi, Ishikawa 920-0856 JAPAN"
