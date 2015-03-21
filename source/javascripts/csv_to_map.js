@@ -1,3 +1,9 @@
+"use strict";
+var area_list=Array()
+
+/**
+  csvを配列にします。
+*/
 function csvToArray(filename, cb) {
   $.get(filename, function(csvdata) {
     //CSVのパース作業
@@ -30,28 +36,56 @@ function putMarker(map,current){
     content: areaFull+"<br>"+"<a href='"+url+"'>"+url+"</a>"+"<br>"+"更新日"+current[3]
   });
 
-  var infoCall=function(i){
-    return function(){infowindow.open(map,marker)};
-  }()
+  var infoCall=function(){infowindow.open(map,marker)};
   google.maps.event.addListener(marker, 'click',infoCall);
+
+  if (area_list[current[2]]){
+    //nop
+  }else{
+    area_list[current[2]]=Array()
+  }
+  area_list[current[2]].push(current)
 }
 
+
 function initialize() {
-  var mapOptions = {
-    zoom: 8,
-    center: new google.maps.LatLng(36.561325,136.656205),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  }
-  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
-
-  csvToArray("5374_cities.csv",function(data){
-    var label = data.shift();
-    for (var i in data){
-      putMarker(map,data[i])
+  setTimeout(function(){
+    var mapOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(36.561325,136.656205),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-  })
+    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
+
+    csvToArray("5374_cities.csv",function(data){
+      var label = data.shift();
+      for (var i in data){
+        putMarker(map,data[i])
+      }
+
+    })
+  },1000)
+
+}
+
+function prefectureChange(){
+  //http://qiita.com/tomcky/items/8f1868f1fb963732de39
+  var selectedPref=$(this).filter("option:selected").text()
+
+  var selectedArea= area_list[selectedPref]
+
+  var city_area_option_html=""
+
+  for (var i in selectedArea){
+
+    var cities=selectedArea[i]
+    city_area_option_html+="<select>"+cities+"</select>"
+
+  }
+
+  $("#city_area").html = city_area_option_html
+  
 }
 
 function loadScript() {
@@ -59,6 +93,10 @@ function loadScript() {
   script.type = "text/javascript";
   script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBNJWgPCGFRNCcs7ZMf10ydCgwnDisGVUU&sensor=TRUE&callback=initialize";
   document.body.appendChild(script);
+
+  $("#prefecture_area").change(prefectureChange)
 }
+
+
 
 window.onload = loadScript;

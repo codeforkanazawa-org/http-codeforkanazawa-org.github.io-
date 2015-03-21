@@ -34,4 +34,6 @@ bundle exec middleman build
 bundle exec middleman server
 ```
 
+
+
 middlemanのさらに使い方に関しては、[オフィシャルページ](https://middlemanapp.com/jp/)をご覧ください。
