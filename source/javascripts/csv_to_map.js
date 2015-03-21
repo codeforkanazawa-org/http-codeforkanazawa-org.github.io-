@@ -71,7 +71,7 @@ function initialize() {
 
 function prefectureChange(){
   //http://qiita.com/tomcky/items/8f1868f1fb963732de39
-  var selectedPref=$(this).filter("option:selected").text()
+  var selectedPref=$(this).find("option:selected").text()
 
   var selectedArea= area_list[selectedPref]
 
@@ -80,12 +80,12 @@ function prefectureChange(){
   for (var i in selectedArea){
 
     var cities=selectedArea[i]
-    city_area_option_html+="<select>"+cities+"</select>"
+    city_area_option_html+="<option>"+cities[0]+"</option>"
 
   }
 
-  $("#city_area").html = city_area_option_html
-  
+  $("#city_area").html(city_area_option_html)
+
 }
 
 function loadScript() {
