@@ -73,6 +73,10 @@ function prefectureChange(){
 
   }
 
+  if (city_area_option_html.length==0){
+    city_area_option_html="<option>この地域はまだ作られておりません。</option>"
+  }
+
   $("#city_area").html(city_area_option_html)
 
 }
