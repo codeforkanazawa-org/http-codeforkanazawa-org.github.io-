@@ -132,7 +132,7 @@ function prefectureChange(){
 
   var city_area_option_html=""
 
-  if (selectedArea.length==0){
+  if (selectedArea == undefined){
     city_area_option_html="<option>この地域はまだ作られておりません</option>"
   }
   else{
