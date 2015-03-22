@@ -3,6 +3,12 @@
 #map_canvas img{
   max-width:none;
 }
+h2 {
+    margin-top: 0px;
+    padding-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom:10px;
+}
 .panel-group .panel + .panel {
     margin-top: 0px;
 }
@@ -25,4 +31,19 @@
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
+.about{
+  color: #ffffff!important;
+  background-color: #77ae1f !important;
+}
+.new{
+  color: #ffffff!important;
+  background-color: #733b96 !important;
+}
+.spread{
+  color: #ffffff!important;
+  background-color: #2dc7aa !important;
+}
+.use{
+  color: #ffffff!important;
+  background-color: #ea3b13 !important;
+}
