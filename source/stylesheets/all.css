@@ -42,9 +42,10 @@ h2 {
 }
 .spread{
   background-color: #2dc7aa !important;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   margin-bottom: -20px;
 }
 .use{
   background-color: #ea3b13 !important;
+  padding-bottom: 10px;
 }
