@@ -1,4 +1,8 @@
 "use strict";
+
+//最新更新の要素数を指定します。
+var LATEST_ELEMENTS=5
+
 //全地区データです。
 var area_list=Array()
 //選択されているAreaのオブジェクトです。
@@ -6,6 +10,10 @@ var area_list=Array()
 //が各インデックスに対応しております。
 var selectedArea;
 
+
+var latestArea=Array()
+
+var googleMap
 
 /**
   csvを配列にします。
@@ -27,6 +35,43 @@ function csvToArray(filename, cb) {
   });
 }
 
+
+
+function compareDate(A,B){
+  function toInt(v){
+    return v-0
+  }
+
+  var tmpA=A[3].split(".").map(toInt)
+  var tmpB=B[3].split(".").map(toInt)
+  for (var i=0;i<tmpA.length;i++){
+    if (tmpA[i]<tmpB[i]){
+      return -1
+    }else if (tmpA[i]>tmpB[i]){
+      return 1
+    }
+  }
+  return 0
+}
+
+/**
+挿入ソートのような感じで要素を挿入します。
+*/
+function insertList(current){
+  for (var i in latestArea){
+    if (compareDate(current,latestArea[i])>=0){
+      //参考 http://lostlinksearch.net/blog/2013/06/javascript%E3%81%A7%E9%85%8D%E5%88%97%E3%81%AE%E4%BB%BB%E6%84%8F%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%81%AB%E8%A6%81%E7%B4%A0%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B-insert/
+      latestArea.splice(i,0,current);
+      return;
+    }
+  }
+  //ここまで来たら最後の要素に追加
+  latestArea.push(current)
+
+}
+
+//地図上にマーカーを置きます。
+
 function putMarker(map,current){
 
   var latlng = new google.maps.LatLng(current[5]-0,current[6]-0);
@@ -45,16 +90,37 @@ function putMarker(map,current){
   var infoCall=function(){infowindow.open(map,marker)};
   google.maps.event.addListener(marker, 'click',infoCall);
 
+}
+
+function addData(current){
   if (area_list[current[2]]){
     //nop
   }else{
-    area_list[current[2]]=Array()
+    area_list[current[2]]=Array();
   }
-  area_list[current[2]].push(current)
+  area_list[current[2]].push(current);
+
+  insertList(current);
+
+  if (latestArea.length>=LATEST_ELEMENTS){
+
+    latestArea=latestArea.splice(0,LATEST_ELEMENTS);
+  }
+
 }
 
+function showLatestData(){
+
+  var lastest_html=""
+  for (var i in latestArea){
+    var area=latestArea[i]
+    lastest_html+="<p>"+area[3]+"に<a href='"+area[4]+"'>"+area[0]+"版5374</a>が作成されました。</p>"
+  }
 
 
+  $("#latest_list").html(lastest_html)
+
+}
 
 //都道府県が変更された時に呼ばれます。
 function prefectureChange(){
@@ -66,20 +132,43 @@ function prefectureChange(){
 
   var city_area_option_html=""
 
-  for (var i in selectedArea){
+  if (selectedArea.length==0){
+    city_area_option_html="<option>この地域はまだ作られておりません</option>"
+  }
+  else{
+    city_area_option_html+="<option>エリアを選択してください</option>"
+    for (var i in selectedArea){
 
-    var cities=selectedArea[i]
-    city_area_option_html+="<option>"+cities[0]+"</option>"
+      var city=selectedArea[i]
+      city_area_option_html+="<option>"+city[0]+"</option>"
+
+    }
 
   }
 
-  if (city_area_option_html.length==0){
-    city_area_option_html="<option>この地域はまだ作られておりません。</option>"
-  }
 
   $("#city_area").html(city_area_option_html)
+  //最初の変更を呼び出す
+  cityChange()
 
 }
+
+//市町村が変更された時に呼ばれます。
+function cityChange(){
+
+  var selectedCity=$("#city_area").find("option:selected").text()
+
+  for (var i in selectedArea){
+    var city=selectedArea[i]
+    if (city[0]==selectedCity){
+      googleMap.panTo(new google.maps.LatLng(city[5],city[6]));
+      //15はなんなく
+      googleMap.setZoom(15)
+      return
+    }
+  }
+}
+
 //選択した都道府県と市町村で対象のページにジャンプします。
 function goPage(){
   var selectedCity=$("#city_area").find("option:selected").text()
@@ -108,7 +197,7 @@ function initialize() {
     center: new google.maps.LatLng(36.561325,136.656205),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
-  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  googleMap= new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
 
   csvToArray("5374_cities.csv",function(data){
@@ -116,16 +205,26 @@ function initialize() {
     var label = data.shift();
     //地図にマーカーをたてる
     for (var i in data){
-      putMarker(map,data[i])
+      putMarker(googleMap,data[i]);
+      addData(data[i])
     }
+
+    //各都道府県の市区町村をソートする。
+    for (var i in area_list){
+      area_list[i].sort()
+    }
+
 
     //初めに変更されたとして呼ぶ
     prefectureChange();
 
     $("#prefecture_area").change(prefectureChange)
 
+    $("#city_area").change(cityChange)
+
     $("#go_page").click(goPage)
 
+    showLatestData()
 
   })
 
