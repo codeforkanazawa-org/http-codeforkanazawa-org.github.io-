@@ -13,6 +13,70 @@ ja:
   new_p1: "5374.jpに関する情報です"
   spread_h2: "各地への広がり"
   spread_p1: "2013年9月にCode for Kanazawaの手で誕生した5374.jpは、まず金沢市から始まりました。現在、石川県野々市市への展開など、各地へ広がりをみせています。ぜひ、あなたの町でも5374.jpを展開してみませんか？サブドメインが必要な際、ご連絡頂けましたらこちらで設定いたします！"
+  spread_list: '<optgroup label="北海道地方">
+  <option>北海道</option>
+  </optgroup>
+  <optgroup label="東北地方">
+  <option>青森県</option>
+  <option>岩手県</option>
+  <option>宮城県</option>
+  <option>秋田県</option>
+  <option>山形県</option>
+  <option>福島県</option>
+  </optgroup>
+  <optgroup label="関東地方">
+  <option>茨城県</option>
+  <option>栃木県</option>
+  <option>群馬県</option>
+  <option>埼玉県</option>
+  <option>千葉県</option>
+  <option>東京都</option>
+  <option>神奈川県</option>
+  </optgroup>
+  <optgroup label="中部地方">
+  <option>新潟県</option>
+  <option>富山県</option>
+  <option>石川県</option>
+  <option>福井県</option>
+  <option>山梨県</option>
+  <option>長野県</option>
+  <option>岐阜県</option>
+  <option>静岡県</option>
+  <option>愛知県</option>
+  </optgroup>
+  <optgroup label="近畿地方">
+  <option>三重県</option>
+  <option>滋賀県</option>
+  <option>京都府</option>
+  <option>大阪府</option>
+  <option>兵庫県</option>
+  <option>奈良県</option>
+  <option>和歌山県</option>
+  </optgroup>
+  <optgroup label="中国地方">
+  <option>鳥取県</option>
+  <option>島根県</option>
+  <option>岡山県</option>
+  <option>広島県</option>
+  <option>山口県</option>
+  </optgroup>
+  <optgroup label="四国地方">
+  <option>徳島県</option>
+  <option>香川県</option>
+  <option>愛媛県</option>
+  <option>高知県</option>
+  </optgroup>
+  <optgroup label="九州地方">
+  <option>福岡県</option>
+  <option>佐賀県</option>
+  <option>長崎県</option>
+  <option>熊本県</option>
+  <option>大分県</option>
+  <option>宮崎県</option>
+  <option>鹿児島県</option>
+  <option>沖縄県</option>
+  </optgroup>'
+  spread_look: "サイトを見る"
   use_h2: "あなたの町で5374.jpを利用したい"
   use_p1: "あなたの町でも5374.jpを利用することは可能です。5374.jpのソースコードはオープンになっています。こちらから是非ご利用ください。"
   footer_h2: "Code for Kanazawaについて"
