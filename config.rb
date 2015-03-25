@@ -1,3 +1,5 @@
+require 'csv2json.rb'
+
 ###
 # Compass
 ###
