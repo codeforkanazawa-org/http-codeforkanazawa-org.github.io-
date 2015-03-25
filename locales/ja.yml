@@ -14,67 +14,67 @@ ja:
   spread_h2: "各地への広がり"
   spread_p1: "2013年9月にCode for Kanazawaの手で誕生した5374.jpは、まず金沢市から始まりました。現在、石川県野々市市への展開など、各地へ広がりをみせています。ぜひ、あなたの町でも5374.jpを展開してみませんか？サブドメインが必要な際、ご連絡頂けましたらこちらで設定いたします！"
   spread_list: '<optgroup label="北海道地方">
-  <option>北海道</option>
+  <option code="01">北海道</option>
   </optgroup>
   <optgroup label="東北地方">
-  <option>青森県</option>
-  <option>岩手県</option>
-  <option>宮城県</option>
-  <option>秋田県</option>
-  <option>山形県</option>
-  <option>福島県</option>
+  <option code="02">青森県</option>
+  <option code="03">岩手県</option>
+  <option code="04">宮城県</option>
+  <option code="05">秋田県</option>
+  <option code="06">山形県</option>
+  <option code="07">福島県</option>
   </optgroup>
   <optgroup label="関東地方">
-  <option>茨城県</option>
-  <option>栃木県</option>
-  <option>群馬県</option>
-  <option>埼玉県</option>
-  <option>千葉県</option>
-  <option>東京都</option>
-  <option>神奈川県</option>
+  <option code="08">茨城県</option>
+  <option code="09">栃木県</option>
+  <option code="10">群馬県</option>
+  <option code="11">埼玉県</option>
+  <option code="12">千葉県</option>
+  <option code="13">東京都</option>
+  <option code="14">神奈川県</option>
   </optgroup>
   <optgroup label="中部地方">
-  <option>新潟県</option>
-  <option>富山県</option>
-  <option>石川県</option>
-  <option>福井県</option>
-  <option>山梨県</option>
-  <option>長野県</option>
-  <option>岐阜県</option>
-  <option>静岡県</option>
-  <option>愛知県</option>
+  <option code="15">新潟県</option>
+  <option code="16">富山県</option>
+  <option code="17">石川県</option>
+  <option code="18">福井県</option>
+  <option code="19">山梨県</option>
+  <option code="20">長野県</option>
+  <option code="21">岐阜県</option>
+  <option code="22">静岡県</option>
+  <option code="23">愛知県</option>
   </optgroup>
   <optgroup label="近畿地方">
-  <option>三重県</option>
-  <option>滋賀県</option>
-  <option>京都府</option>
-  <option>大阪府</option>
-  <option>兵庫県</option>
-  <option>奈良県</option>
-  <option>和歌山県</option>
+  <option code="24">三重県</option>
+  <option code="25">滋賀県</option>
+  <option code="26">京都府</option>
+  <option code="27">大阪府</option>
+  <option code="28">兵庫県</option>
+  <option code="29">奈良県</option>
+  <option code="30">和歌山県</option>
   </optgroup>
   <optgroup label="中国地方">
-  <option>鳥取県</option>
-  <option>島根県</option>
-  <option>岡山県</option>
-  <option>広島県</option>
-  <option>山口県</option>
+  <option code="31">鳥取県</option>
+  <option code="32">島根県</option>
+  <option code="33">岡山県</option>
+  <option code="34">広島県</option>
+  <option code="35">山口県</option>
   </optgroup>
   <optgroup label="四国地方">
-  <option>徳島県</option>
-  <option>香川県</option>
-  <option>愛媛県</option>
-  <option>高知県</option>
+  <option code="36">徳島県</option>
+  <option code="37">香川県</option>
+  <option code="38">愛媛県</option>
+  <option code="39">高知県</option>
   </optgroup>
   <optgroup label="九州地方">
-  <option>福岡県</option>
-  <option>佐賀県</option>
-  <option>長崎県</option>
-  <option>熊本県</option>
-  <option>大分県</option>
-  <option>宮崎県</option>
-  <option>鹿児島県</option>
-  <option>沖縄県</option>
+  <option code="40">福岡県</option>
+  <option code="41">佐賀県</option>
+  <option code="42">長崎県</option>
+  <option code="43">熊本県</option>
+  <option code="44">大分県</option>
+  <option code="45">宮崎県</option>
+  <option code="46">鹿児島県</option>
+  <option code="47">沖縄県</option>
   </optgroup>'
   spread_look: "サイトを見る"
   use_h2: "あなたの町で5374.jpを利用したい"
@@ -87,3 +87,5 @@ ja:
   footer_p5: "私たちは、デザインをして、ソフトウェアコードを書き、課題を解決するサービスを完成させるのです。さらに、そのサービスを提供し続ける力も持ちます。"
   footer_p6: "CfKは市民のための組織です。行政や民間企業の影響を受けずに中立・公益の立場から物事を判断するよう心がけています。"
   address: "〒920-0856 金沢市昭和町12-6"
+  city_label: "地区を選択してください"
+  empty_city_label: "この地域にはまだ作られておりません。"

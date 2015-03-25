@@ -3,7 +3,7 @@
 <select id="prefecture_area" size="1">
 <%= t(:spread_list) %>
 </select>
-<select id="city_area" size="1">
+<select id="city_area" size="1" label="<%= t(:city_label) %>" emptyLabel="<%= t(:empty_city_label) %>"  >
 </select>
 <button id="go_page" class="btn btn-default" type="submit"><%= t(:spread_look) %></button>
 <div id="map_canvas" style="width:100%; height:300pt"></div>
