@@ -14,67 +14,67 @@ en:
   spread_h2: "“Spreading to other cities/towns”"
   spread_p1: "5374.jp was first started in Kanazawa by Code for Kanazawa in September 2013, and has since expanded into Ishikawa Prefecture (Nonoichi City) and is spreading to other places.  Why not expand 5374 to your town? If a subdomain is required, let us know and we can set it up for you."
   spread_list: '<optgroup label="Hokkaido district">
-  <option>Hokkaido</option>
+  <option code="01">Hokkaido</option>
   </optgroup>
   <optgroup label="Tohoku district">
-  <option>Aomori</option>
-  <option>Iwate</option>
-  <option>Miyagi</option>
-  <option>Akita</option>
-  <option>Yamagata</option>
-  <option>Fukushima</option>
+  <option code="02">Aomori</option>
+  <option code="03">Iwate</option>
+  <option code="04">Miyagi</option>
+  <option code="05">Akita</option>
+  <option code="06">Yamagata</option>
+  <option code="07">Fukushima</option>
   </optgroup>
   <optgroup label="Kanto district">
-  <option>Ibaraki</option>
-  <option>Tochigi</option>
-  <option>Gunma</option>
-  <option>Saitama</option>
-  <option>Chiba</option>
-  <option>Tokyo</option>
-  <option>Kanagawa</option>
+  <option code="08">Ibaraki</option>
+  <option code="09">Tochigi</option>
+  <option code="10">Gunma</option>
+  <option code="11">Saitama</option>
+  <option code="12">Chiba</option>
+  <option code="13">Tokyo</option>
+  <option code="14">Kanagawa</option>
   </optgroup>
   <optgroup label="Chubu district">
-  <option>Niigata</option>
-  <option>Toyama</option>
-  <option>Ishikawa</option>
-  <option>Fukui</option>
-  <option>Yamanashi</option>
-  <option>Nagano</option>
-  <option>Gifu</option>
-  <option>Shizuoka</option>
-  <option>Aichi</option>
+  <option code="15">Niigata</option>
+  <option code="16">Toyama</option>
+  <option code="17">Ishikawa</option>
+  <option code="18">Fukui</option>
+  <option code="19">Yamanashi</option>
+  <option code="20">Nagano</option>
+  <option code="21">Gifu</option>
+  <option code="22">Shizuoka</option>
+  <option code="23">Aichi</option>
   </optgroup>
   <optgroup label="Kinki district">
-  <option>Mie</option>
-  <option>Shiga</option>
-  <option>Kyoto</option>
-  <option>Osaka</option>
-  <option>Hyogo</option>
-  <option>Nara</option>
-  <option>Wakayama</option>
+  <option code="24">Mie</option>
+  <option code="25">Shiga</option>
+  <option code="26">Kyoto</option>
+  <option code="27">Osaka</option>
+  <option code="28">Hyogo</option>
+  <option code="29">Nara</option>
+  <option code="30">Wakayama</option>
   </optgroup>
   <optgroup label="Chugoku district">
-  <option>Tottori</option>
-  <option>Shimane</option>
-  <option>Okayama</option>
-  <option>Hiroshima</option>
-  <option>Yamaguchi</option>
+  <option code="31">Tottori</option>
+  <option code="32">Shimane</option>
+  <option code="33">Okayama</option>
+  <option code="34">Hiroshima</option>
+  <option code="35">Yamaguchi</option>
   </optgroup>
   <optgroup label="Shikoku district">
-  <option>Tokushima</option>
-  <option>Kagawa</option>
-  <option>Ehime</option>
-  <option>Kouchi</option>
+  <option code="36">Tokushima</option>
+  <option code="37">Kagawa</option>
+  <option code="38">Ehime</option>
+  <option code="39">Kouchi</option>
   </optgroup>
   <optgroup label="Kyushu district">
-  <option>Fukuoka</option>
-  <option>Saga</option>
-  <option>Nagasaki</option>
-  <option>Kumamoto</option>
-  <option>Oita</option>
-  <option>Miyagi</option>
-  <option>Kagoshima</option>
-  <option>Okinawa</option>
+  <option code="40">Fukuoka</option>
+  <option code="41">Saga</option>
+  <option code="42">Nagasaki</option>
+  <option code="43">Kumamoto</option>
+  <option code="44">Oita</option>
+  <option code="45">Miyagi</option>
+  <option code="46">Kagoshima</option>
+  <option code="47">Okinawa</option>
   </optgroup>'
   spread_look: "Go"
   use_h2: "“We want to spread 5374 to your town”"
@@ -87,3 +87,5 @@ en:
   footer_p5: "Our mission is to help complete services that you would like to have designed, and to write software codes to solve your problem. We also have the power to continue to provide this service in the future."
   footer_p6: "Code for Kanazawa is an organization made for citizens. We try to use the point of view of Kanazawa citizens, without the bias of the private sector and government organizations."
   address: "12-6 Showa-machi, Kanazawa-shi, Ishikawa 920-0856 JAPAN"
+  city_label: "choose city"
+  empty_city_label: "Not been yet made in this area"
