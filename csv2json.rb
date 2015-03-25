@@ -1,4 +1,4 @@
-require "CSV"
+require "csv"
 require "json"
 jsonFile = File.open("source/localizable/5374.json.erb",'w');
 jsonData = {}
