@@ -238,6 +238,10 @@ function loadScript() {
   script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBNJWgPCGFRNCcs7ZMf10ydCgwnDisGVUU&sensor=TRUE&callback=initialize";
   document.body.appendChild(script);
 
+  $("#prefecture_area option").hide()
+
+  $("#prefecture_area optgroup").hide()
+
 }
 //locationデータからローカライズ用パスかどうか判断する
 function isLocalizePath(path){
@@ -271,7 +275,11 @@ function initialize() {
 
     //各都道府県の市区町村をソートする。
     for (var i in area_list){
-      area_list[i].sort()
+        //作られている地域はソートする
+        area_list[i].sort()
+        $("#prefecture_area").find("option[code='"+i+"']").show()
+        $("#prefecture_area").find("option[code='"+i+"']").parent().show()
+
     }
 
 
