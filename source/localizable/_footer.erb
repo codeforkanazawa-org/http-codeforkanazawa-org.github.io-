@@ -1,5 +1,5 @@
-<h2><%= t(:footer_h2) %></h2>
-
+<h2 class="panel-title"><%= t(:footer_h2) %></h2>
+ 
 <p><%= t(:footer_p1) %></p>
 <p><%= t(:footer_p2) %></p>
 <p><%= t(:footer_p3) %></p>
@@ -8,7 +8,12 @@
 <p><%= t(:footer_p5) %></p>
 
 <p><%= t(:footer_p6) %></p>
-
-<address><h3>Code for Kanazawa</h3>
-<p>http://www.codeforkanazawa.org/</p>
-<p><%= t(:address) %></p><a href="mailto:cfk-office@codeforkanazawa.org">cfk-office@codeforkanazawa.org</a></address>
+ 
+<div class="footer-contact">
+    <%= image_tag('logo.png', :alt => 'Code for Kanazawa', :class => 'logo') %>
+    <address>
+        <h5>Code for Kanazawa</h5>
+        <p><%= link_to('http://www.codeforkanazawa.org/', 'http://www.codeforkanazawa.org/') %></p>
+        <p>Mail: <%= t(:address) %></p><a href="mailto:cfk-office@codeforkanazawa.org">cfk-office@codeforkanazawa.org</a>
+    </address>
+</div>
