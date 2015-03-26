@@ -27,7 +27,7 @@ en:
   please_select_area: "Choose your area"
   select_illegal_city_code: "(%(code)s) is an invalid area. Please mail us at cfk-office@codeforkanazawa.org"
   failed_download_data: "Unable to load data.Please mail us at cfk-office@codeforkanazawa.orgまでご連絡ください。"
-  make_5374: "<p>%(date)s <a href='%(url)s'>5374 %(name)s</a> was launced.</p>"
+  make_5374: "<p>%(date)s <a href='%(url)s'> %(name)s</a> was launced.</p>"
   update_date: "Update"
 
   area1: "Hokkaido district"
