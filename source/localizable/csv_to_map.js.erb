@@ -3,6 +3,7 @@ var LATEST_ELEMENTS = 5;
 
 var areas = [];
 var googleMap;
+var currentInfoWindow = null;
 
 $(function() {
   "use strict";
@@ -125,6 +126,10 @@ function putMarker(prefecture, city) {
   });
 
   google.maps.event.addListener(marker, "click", function() {
+    if (currentInfoWindow) {
+      currentInfoWindow.close();
+    }
+    currentInfoWindow = infowindow;
     infowindow.open(googleMap, marker);
   });
 }
