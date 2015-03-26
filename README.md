@@ -42,7 +42,3 @@ bundle exec middleman server
 
 middlemanのさらに使い方に関しては、[オフィシャルページ](https://middlemanapp.com/jp/)をご覧ください。
 
-
-##全国地方公共団体コード
-こちらのExcelファイルなどからお探しください
-http://www.soumu.go.jp/denshijiti/code.html
