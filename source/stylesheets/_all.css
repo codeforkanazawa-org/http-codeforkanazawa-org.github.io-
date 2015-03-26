@@ -120,3 +120,6 @@ div#map_canvas div.info_window{
   line-height: 8px;
   margin-left: 20px;
 }
+.gm-style-iw div div{
+    color: #000000 !important;
+}
