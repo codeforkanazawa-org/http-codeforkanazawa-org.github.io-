@@ -34,7 +34,6 @@ h3.panel-title {
 
 h2 {
     margin-top: 0px;
-    padding-top: 20px;
     margin-bottom: 0px;
     padding-bottom:10px;
 }
@@ -117,7 +116,6 @@ div#map_canvas div.info_window{
 }
 
 .footer-contact address{
-  margin-top: -10px;
   font-size: 12px;
   line-height: 8px;
   margin-left: 20px;
