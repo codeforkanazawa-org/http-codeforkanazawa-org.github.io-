@@ -24,7 +24,7 @@ en:
   footer_p5: "Our mission is to help complete services that you would like to have designed, and to write software codes to solve your problem. We also have the power to continue to provide this service in the future."
   footer_p6: "Code for Kanazawa is an organization made for citizens. We try to use the point of view of Kanazawa citizens, without the bias of the private sector and government organizations."
   address: "12-6 Showa-machi, Kanazawa-shi, Ishikawa 920-0856 JAPAN"
-  please_select_area: "Choose your area"
+  please_select_area: "Choose your city"
   select_illegal_city_code: "(%(code)s) is an invalid area. Please mail us at cfk-office@codeforkanazawa.org"
   failed_download_data: "Unable to load data.Please mail us at cfk-office@codeforkanazawa.org"
   make_5374: "<p>%(date)s <a href='%(url)s'> %(name)s</a> was launced.</p>"
