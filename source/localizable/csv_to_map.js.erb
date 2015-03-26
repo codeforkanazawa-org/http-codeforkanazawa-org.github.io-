@@ -33,15 +33,15 @@ function setupGoogleMaps() {
 
 function load5374Datas() {
   $.ajax({
-    url: '5374.json',
-    method: 'GET',
-    dataType: 'json',
+    url: "5374.json",
+    method: "GET",
+    dataType: "json",
     success: function(data) {
       areas = data.areas;
       onLoad5374Data();
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
-      alert('データの取得に失敗しました。cfk-office@codeforkanazawa.orgまでご連絡ください。');
+      alert("<%= t(:failed_download_data) %>");
     }
   });
 }
@@ -69,7 +69,7 @@ function onLoad5374Data() {
     var city = getCity(cityCode);
 
     if (!city) {
-      alert('不正な市区町村(' + cityCode + ')が選択されました。cfk-office@codeforkanazawa.orgまでご連絡ください。');
+      alert(sprintf("<%= t(:select_illegal_city_code) %>" , {code: cityCode}));
       return;
     }
 
@@ -84,7 +84,7 @@ function onLoad5374Data() {
     var city = getCity(cityCode);
 
     if (!city) {
-      alert("エリアを選択してください。");
+      alert("<%= t(:please_select_area) %>");
       return;
     }
 
@@ -122,7 +122,7 @@ function putMarker(prefecture, city) {
   var url = city.url;
   var areaFull = prefecture.name + city.name;
   var infowindow = new google.maps.InfoWindow({
-    content: areaFull + "<br>" + "<a href='" + url + "'>" + url + "</a>" + "<br>" + "更新日" + city.date
+    content: areaFull + "<br>" + "<a href='" + url + "'>" + url + "</a>" + "<br>" + "<%= t(:update_date) %>" + city.date
   });
 
   google.maps.event.addListener(marker, "click", function() {
@@ -161,7 +161,7 @@ function createCitySelect(prefectureCode) {
 
   var options = [];
 
-  options.push($("<option>").text("エリアを選択してください。"));
+  options.push($("<option>").text("<%= t(:please_select_area) %>"));
 
   var cities = prefecture.cities;
 
@@ -180,7 +180,7 @@ function showLatestData() {
 
   for (var cityIndex = 0; cityIndex < cities.length && cityIndex < LATEST_ELEMENTS; ++cityIndex) {
     var city = cities[cityIndex];
-    lastest_html += "<p>" + city.date + "に<a href='" + city.url + "'>" + city.name + "版5374</a>が作成されました。</p>";
+    lastest_html += sprintf("<%= t(:make_5374) %>", city);
   }
 
   $("#latest_list").html(lastest_html);

@@ -24,6 +24,12 @@ ja:
   footer_p5: "私たちは、デザインをして、ソフトウェアコードを書き、課題を解決するサービスを完成させるのです。さらに、そのサービスを提供し続ける力も持ちます。"
   footer_p6: "CfKは市民のための組織です。行政や民間企業の影響を受けずに中立・公益の立場から物事を判断するよう心がけています。"
   address: "〒920-0856 金沢市昭和町12-6"
+  please_select_area: "エリアを選択してください。"
+  select_illegal_city_code: "不正な市区町村(%(code)s)が選択されました。cfk-office@codeforkanazawa.orgまでご連絡ください。"
+  failed_download_data: "データの取得に失敗しました。cfk-office@codeforkanazawa.orgまでご連絡ください。"
+  make_5374: "<p>%(date)sに<a href='%(url)s'>%(name)s版5374</a>が作成されました。</p>"
+  update_date: "更新日"
+
 
   area1: "北海道地方"
   area2: "東北地方"
