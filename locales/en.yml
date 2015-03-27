@@ -1,6 +1,6 @@
 ---
 en:
-  translate: '<a href="/index.html">日本語</a>'
+  translate: '<a href="../index.html">日本語</a>'
   about_h3: "“When will which garbage be collected?”"
   about_p1: "Garbage collection is becoming a serious problem. Code for Kanazawa is firstly focused on the correct way to dispose of garbage. With this app, if you move to a new area of Kanazawa, you can find information about different trash disposal times for your neighborhood."
   about_h4_1: ""

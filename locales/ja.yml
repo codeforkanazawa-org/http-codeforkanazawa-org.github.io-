@@ -1,6 +1,6 @@
 ---
 ja:
-  translate: '<a href="/en/index.html">English</a>'
+  translate: '<a href="./en/index.html">English</a>'
   about_h3: "「いつ、どのゴミが収集されているのか？」"
   about_p1: "ゴミの問題はどの地域でも深刻になりつつあります。 Code for Kanazawaでは、先ずは正しいゴミの捨て方に注目しました。例えばお引っ越しをされた場合や、新しく金沢市に住むことになった時、このアプリを使えばすぐに分かるように、目的と使い方をとてもシンプルにデザインしました。"
   about_h4_1: "色でゴミのジャンルを表示"
