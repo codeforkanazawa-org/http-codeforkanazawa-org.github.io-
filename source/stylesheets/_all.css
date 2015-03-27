@@ -131,3 +131,50 @@ div#map_canvas div.info_window{
 .select_menu{
   margin: 10px;
 }
+.about-section h4{
+  margin-top:40px;
+}
+@media screen and (max-width: 414px) {
+   /* 414px以下の場合 */
+   .about-picture-desktop1,.about-picture-desktop2{
+     visibility:hidden;
+     height:0px;
+   }
+ }
+@media screen and (min-width: 414px) {
+   /* 415px以上の場合 */
+   .about-picture{
+     visibility:hidden;
+     height:0px;
+   }
+   .about-section{
+     overflow: hidden;
+     margin-bottom: 0px;
+   }
+   .about-under,.about-picture-desktop2{
+     float: left;
+   }
+   .about-top,.about-picture-desktop1{
+     float: left;
+   }
+   .about-picture-desktop2{
+     width:40%;
+     min-width:247px
+   }
+   .about-under{
+     width:60%;
+     min-width:371px
+   }
+   .panel-body.about{
+     padding-bottom: 0px;
+   }
+   .about-top{
+     width:55%;
+   }
+   .about-picture-desktop1{
+     width:45%;
+   }
+   body{
+     min-width:680px;
+   }
+}
