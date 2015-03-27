@@ -1,75 +1,83 @@
 require "csv"
 require "json"
-jsonFile = File.open("source/localizable/5374.json.erb",'w');
-jsonData = {}
-dist = {}
-pref = {}
-i = 0
-for num in 1..47 do
-  pref[num] = {
+
+# 読み込むCSVファイル名
+csvFileName = "source/5374_cities.csv"
+# 出力するJSONファイル名
+jsonFileName = "source/localizable/5374.json.erb"
+
+# 都道府県
+pref = Array.new(48) {|num| {
     code: num,
     name: "<%= t(:prefecture"+num.to_s+") %>",
     cities: Array.new,
   }
-end
-for num in 1..8 do
-  dist[num] = {
-    code: num,
+}
+
+# 地方
+dist = Array.new(9) {|num| {
+  code: num,
     name: "<%= t(:area"+num.to_s+") %>",
     prefectures: Array.new,
   }
-end
-CSV.foreach("source/5374_cities.csv") do |row|
+}
 
-  jsonData[row[0]] = {
+# CSVを読み込んで都道府県に市区町村を追加していく。
+first = false
+CSV.foreach(csvFileName) do |row|
+  unless first then
+    first = true
+    next
+  end
+
+  pref[row[0].to_s[0,2].to_i][:cities].push({
     code: row[0],
     name: "<%= t(:city"+row[0]+") %>",
     url: row[4],
     latitude: row[5],
     longitude: row[6],
     date: row[3],
-    };
+    })
+end
 
-    if i != 0 then
-      pref[row[0].to_s[0,2].to_i][:cities].push(jsonData[row[0]]);
-    end
-    i+=1
+# 都道府県を各地方に割り振る。
+pref.each_with_index {|p, num|
+  # 市区町村が1つもなし(=その県で5374が作られていない)場合は出力しない。
+  if p[:cities].length == 0 then
+    next
   end
 
-  for num in 1..47 do
-    pref[num][:cities].sort!{|a, b| a[:code] <=> b[:code] }
-  end
+  # 予め県内で市区町村をソートしておく。
+  p[:cities].sort!{|a, b| a[:code] <=> b[:code] }
 
-  for num in 1..47 do
-    if pref[num][:cities].length == 0 then
-      next
-    end
+  def to_dist_index(num)
     if num == 1 then
-      dist[1][:prefectures].push(pref[num])
+      1
     elsif num <= 7 then
-      dist[2][:prefectures].push(pref[num])
+      2
     elsif num <= 14 then
-      dist[3][:prefectures].push(pref[num])
+      3
     elsif num <= 23 then
-      dist[4][:prefectures].push(pref[num])
+      4
     elsif num <= 30 then
-      dist[5][:prefectures].push(pref[num])
+      5
     elsif num <= 35 then
-      dist[6][:prefectures].push(pref[num])
+      6
     elsif num <= 39 then
-      dist[7][:prefectures].push(pref[num])
+      7
     elsif num <= 47 then
-      dist[8][:prefectures].push(pref[num])
+      8
+    else
+      0
     end
   end
-  values = Array.new
-  for num in 1..8 do
-    if dist[num][:prefectures].length == 0 then
-      next
-    end
-    values.push(dist[num])
-  end
-  areas = {
-    areas: values
-  }
-  jsonFile.write(JSON.pretty_generate(areas));
+
+  dist[to_dist_index(num)][:prefectures].push(p)
+}
+
+output = {
+  # 都道府県がない地方(その地方で1つも5374が作られていない)場合は出力しない
+  areas: dist.select {|v| v[:prefectures].length != 0 }
+}
+
+File.open(jsonFileName,'w').write(JSON.pretty_generate(output))
