@@ -267,8 +267,8 @@ function compareDate(A, B) {
     return v - 0;
   }
 
-  var tmpA = A.date[3].split(".").map(toInt);
-  var tmpB = B.date[3].split(".").map(toInt);
+  var tmpA = A.date.split(".").map(toInt);
+  var tmpB = B.date.split(".").map(toInt);
   for (var i = 0; i < tmpA.length; i++) {
     if (tmpA[i] > tmpB[i]) {
       return -1;
