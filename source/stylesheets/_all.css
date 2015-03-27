@@ -146,6 +146,10 @@ select{
  }
 @media screen and (min-width: 414px) {
    /* 415px以上の場合 */
+   .wrap{
+  min-width:780px;
+  margin: 0 auto;
+}
    .about-picture{
      visibility:hidden;
      height:0px;
