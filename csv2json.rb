@@ -80,4 +80,4 @@ output = {
   areas: dist.select {|v| v[:prefectures].length != 0 }
 }
 
-File.open(jsonFileName,'w').write(JSON.pretty_generate(output))
+File.open(jsonFileName,'w').write(JSON.generate(output))
