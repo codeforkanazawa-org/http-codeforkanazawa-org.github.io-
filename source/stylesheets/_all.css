@@ -131,6 +131,9 @@ div#map_canvas div.info_window{
 .select_menu{
   margin: 10px;
 }
+select{
+  color:black;
+}
 .about-section h4{
   margin-top:40px;
 }
