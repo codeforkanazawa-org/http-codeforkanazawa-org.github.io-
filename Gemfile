@@ -5,6 +5,7 @@ gem 'jquery-middleman', :require => false
 gem 'bootstrap-sass', :require => false
 gem "middleman", "~>3.3.7"
 gem 'middleman-minify-html'
+gem 'middleman-imageoptim'
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"

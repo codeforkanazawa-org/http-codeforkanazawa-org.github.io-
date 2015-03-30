@@ -67,6 +67,8 @@ configure :build do
   # Minify HTML
   activate :minify_html, :remove_quotes => false, :remove_intertag_spaces => true
 
+  activate :imageoptim
+
   # Enable cache buster
   # activate :asset_hash
 
