@@ -1,4 +1,4 @@
-#5374Officialサイト[![Build Status](https://travis-ci.org/50river/5374site.svg?branch=master)](https://travis-ci.org/50river/5374site)
+#5374Officialサイト[![Build Status](https://travis-ci.org/codeforkanazawa-org/5374site.svg?branch=master)](https://travis-ci.org/codeforkanazawa-org/5374site)
 全国の5374を一覧できる、5374ポータルサイトを構築しています。
 
 ###ローンチした地域を追加したい方
