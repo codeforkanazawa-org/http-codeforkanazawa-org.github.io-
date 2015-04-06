@@ -5,7 +5,10 @@
       margin: 0 auto;
   }
   .about-section h4{
-      margin-top:40px;
+      margin-top:15px;
+   }
+   .about-top{
+      margin-top:50px;
    }
    .about-picture{
        visibility:hidden;
@@ -13,7 +16,9 @@
    }
    .about-section{
        overflow: hidden;
-       margin-bottom: 0px;
+   }
+   .about-section.top{
+       margin-bottom:-100px !important;
    }
    .about-under,.about-picture-desktop2{
        float: left;
@@ -23,11 +28,13 @@
    }
    .about-picture-desktop2{
        width:40%;
-       min-width:247px
+       min-width:247px;
+       margin-bottom:-30px;
    }
    .about-under{
        width:60%;
-       min-width:371px
+       min-width:371px;
+       margin-top:70px;
    }
    .panel-body.about{
        padding-bottom: 0px;
